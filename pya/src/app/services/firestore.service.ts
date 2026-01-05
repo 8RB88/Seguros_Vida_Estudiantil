@@ -174,6 +174,7 @@ export class FirestoreService {
     siniestro.estadoCaso = 'EN_VALIDACION';
     siniestro.fechaRegistro = new Date().toISOString();
     siniestro.montoAprobado = 0;
+    siniestro.uidUsuario = usuarioUid;
     // Relacionar con estudiante
     const estudiante = await this.getDocumentsWithCondition('estudiante', 'uidUsuario', '==', usuarioUid);
     siniestro.idEstudiante = estudiante.length ? estudiante[0].id : null;

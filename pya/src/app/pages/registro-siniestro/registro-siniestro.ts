@@ -29,8 +29,8 @@ export class RegistroSiniestroComponent {
     this.successMessage = '';
     this.errorMessage = '';
     this.loading = true;
-    // Validación manual extra (sin polizaId)
-    if (!this.newSiniestro.numero || !this.newSiniestro.tipo || !this.newSiniestro.descripcion) {
+    // Validación manual extra (solo tipo y descripcion)
+    if (!this.newSiniestro.tipo || !this.newSiniestro.descripcion) {
       this.errorMessage = 'Completa todos los campos obligatorios.';
       this.loading = false;
       return;

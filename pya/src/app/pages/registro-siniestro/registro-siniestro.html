@@ -1,11 +1,7 @@
 <div class="max-w-2xl mx-auto mt-12 p-8 bg-white rounded-3xl shadow-xl border border-slate-100">
   <h2 class="text-3xl font-black text-slate-800 mb-8">Registrar Siniestro</h2>
   <form (ngSubmit)="registrarSiniestro()" #form="ngForm" novalidate>
-    <div class="mb-6">
-      <label class="block text-sm font-bold text-slate-600 mb-2">Número de Siniestro</label>
-      <input type="text" [(ngModel)]="newSiniestro.numero" name="numero" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-2xl focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 outline-none transition-all" required [class.border-red-500]="form.submitted && !newSiniestro.numero">
-      <div *ngIf="form.submitted && !newSiniestro.numero" class="text-red-500 text-xs mt-1">Este campo es obligatorio.</div>
-    </div>
+    <!-- Eliminado campo Número de Siniestro -->
     <!-- Campo de ID de póliza eliminado: ahora se genera automáticamente en backend -->
     <div class="mb-6">
       <label class="block text-sm font-bold text-slate-600 mb-2">Tipo de Siniestro</label>

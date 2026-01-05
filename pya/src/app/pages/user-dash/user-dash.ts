@@ -35,13 +35,15 @@ export class UserDashComponent {
       const rol = this.authService.getRole();
       let docs = [];
       if (rol === 'GESTOR') {
-        // GESTOR ve todos los documentos
         docs = await this.firestoreService.getDocuments('documentos');
       } else {
-        // CLIENTE ve solo los suyos
         docs = await this.firestoreService.getDocumentsWithCondition('documentos', 'usuario', '==', usuarioUid);
       }
-      this.documentosUsuario = docs;
+      // Convertir Timestamp a Date para fechaCarga
+      this.documentosUsuario = docs.map(doc => ({
+        ...doc,
+        fechaCarga: doc.fechaCarga && doc.fechaCarga.toDate ? doc.fechaCarga.toDate() : doc.fechaCarga
+      }));
     } catch (error) {
       this.documentosUsuario = [];
     }
