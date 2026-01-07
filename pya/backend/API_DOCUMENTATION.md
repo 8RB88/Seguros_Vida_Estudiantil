@@ -710,5 +710,5 @@ correcciones_pendientes → en_validacion (bucle)
 ---
 
 **Arquitectura:** DDD con 5 capas (Domain → Application → Infrastructure → Presentation → Platform)  
-**Generado:** 15 Enero 2024  
+**Generado:** 15 Enero 2026  
 **Versión API:** 0.1.0
