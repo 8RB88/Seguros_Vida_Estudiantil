@@ -41,4 +41,6 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
-pya/backend/*.json
+# Ignore credential JSON files in backend, but keep other JSON configs tracked
+pya/backend/*-firebase-adminsdk-*.json
+pya/backend/serviceAccount*.json
